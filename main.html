@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin-top: 100px; background-color: lightblue;">
+<table id="table" border="1" style="margin-left: 30%">
+    <tr>
+        <td>1 сторона</td>
+        <td>2 сторона</td>
+        <td>3 сторона</td>
+        <td>Площадь</td>
+    </tr>
+    <tr>
+        <td>
+            <input class="input" id="input1" value="0" onclick="this.value='';" style="background-color: #7ebae6">
+        </td>
+        <td>
+            <input class="input" id="input2" value="0" onclick="this.value='';" style="background-color: #7ebae6">
+        </td>
+        <td>
+            <input class="input" id="input3" value="0" onclick="this.value='';" style="background-color: #7ebae6">
+        </td>
+        <td>
+            <input class="input" id="input4" value="0" style="background-color: #7ebae6">
+        </td>
+    </tr>
+</table>
+<button class="button" onclick="calc()" style="width: 100px; height: 50px; margin-left:50% ">Найти</button>
+<script src="javascript.js"></script>
+<script>
+    var table = document.getElementById('table');
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    var td4 = document.createElement('td');
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    table.insertRow(tr);
+    table.insertRow();
+</script>
+</body>
+</html>
