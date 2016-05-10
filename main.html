@@ -3,45 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="JQUERY.js"></script>
 </head>
-<body style="margin-top: 100px; background-color: lightblue;">
-<table id="table" border="1" style="margin-left: 30%">
+<style>
+    #window{
+        display: none;
+        /*alignment: center;*/
+        background-color: lightblue;
+    }
+    .input{
+        background-color: #7ebae6;
+    }
+    .mistake{
+        display: none;
+        color: red;
+        margin-left: 30%;
+    }
+</style>
+<body id="body" style="background-color: lightblue;">
+<div class="content" style=" background-color: lightblue;  margin-left:40%; margin-top:20%" >
+<table id="table" border="1" >
     <tr>
         <td>1 сторона</td>
         <td>2 сторона</td>
         <td>3 сторона</td>
         <td>Площадь</td>
     </tr>
-    <tr>
-        <td>
-            <input class="input" id="input1" value="0" onclick="this.value='';" style="background-color: #7ebae6">
-        </td>
-        <td>
-            <input class="input" id="input2" value="0" onclick="this.value='';" style="background-color: #7ebae6">
-        </td>
-        <td>
-            <input class="input" id="input3" value="0" onclick="this.value='';" style="background-color: #7ebae6">
-        </td>
-        <td>
-            <input class="input" id="input4" value="0" style="background-color: #7ebae6">
-        </td>
-    </tr>
 </table>
-<button class="button" onclick="calc()" style="width: 100px; height: 50px; margin-left:50% ">Найти</button>
+
 <script src="javascript.js"></script>
+<button class="button2" style="width: 100px; height: 50px; margin-left:15%">Найти площадь</button>
 <script>
-    var table = document.getElementById('table');
-    var tr = document.createElement('tr');
-    var td1 = document.createElement('td');
-    var td2 = document.createElement('td');
-    var td3 = document.createElement('td');
-    var td4 = document.createElement('td');
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    table.insertRow(tr);
-    table.insertRow();
+    $(".button2").click(function (e) {
+        $(".content").hide();
+        $("body").css("background-color", "darkgrey");
+        $("#window").show();
+        $("#window").css('margin-top', "20%");
+        $("#window").css('margin-left', "10%");
+        $("#window").css('margin-right', "10%");
+    })
 </script>
+</div>
 </body>
+<div id="mask" >
+<div id="window" >
+    <table id="table2" border="1" style="margin-left: 30%">
+        <tr>
+            <td>1 сторона</td>
+            <td>2 сторона</td>
+            <td>3 сторона</td>
+        </tr>
+        <tr>
+            <td>
+                <input class="input" id="input1" value="0" onclick="this.value='';"  >
+            </td>
+            <td>
+                <input class="input" id="input2" value="0" onclick="this.value='';"  >
+            </td>
+            <td>
+                <input class="input" id="input3" value="0" onclick="this.value='';"  >
+            </td>
+        </tr>
+    </table>
+    <p class="mistake"></p>
+    <button class="button" onclick="calc()" style="width: 100px; height: 50px; margin-left:50% ">ОК</button>
+</div>
+</div>
 </html>
